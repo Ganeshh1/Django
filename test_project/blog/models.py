@@ -91,3 +91,54 @@ class Post10(models.Model):
 
     def __str__(self):
         return 'IntegerField_Post'
+
+class Post11(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.DateField()
+
+    def __str__(self):
+        return 'IntegerField_Post'
+
+class Post12(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+    def __str__(self):
+        return 'IntegerField_Post'
+
+class Post13(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+    def __str__(self):
+        return 'IntegerField_Post'
+
+class Post14(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.DateTimeField()
+
+    def __str__(self):
+        return 'DateTimeField_Post'
+
+class Post15(models.Model):
+    name=models.CharField(max_length=100)
+    Floatnumber=models.FloatField()
+
+    def __str__(self):
+        return 'FloatField_Post'
+
+class Post16(models.Model):
+    name=models.CharField(max_length=100)
+    Floatnumber=models.FloatField()
+
+    def __str__(self):
+        return 'FloatField_Post'
+
+class Post17(models.Model):
+    name=models.CharField(max_length=100)
+    Floatnumber=models.FloatField()
+
+    def __str__(self):
+        return 'FloatField_Post'
+
+

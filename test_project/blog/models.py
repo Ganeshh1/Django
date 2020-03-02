@@ -13,3 +13,81 @@ class Post(models.Model):
         return self.title
 
 
+class Post1(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.TextField()
+
+    
+
+    def __str__(self):
+        return self.name
+    
+class Post2(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.URLField()
+
+    def __str__(self):
+        return 'URLField_Post'
+
+class Post3(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.BigIntegerField()
+
+    def __str__(self):
+        return 'BigIntegerField_Post'
+
+class Post4(models.Model):
+    name=models.CharField(max_length=100)
+    Enter_a_binary_number=models.BinaryField()
+
+    def __str__(self):
+        return 'BinaryField_Post'
+
+
+class Post5(models.Model):
+    name=models.CharField(max_length=100)
+    Enter_true_or_false=models.BooleanField()
+
+    def __str__(self):
+        return 'BooleanField_Post'
+
+    
+
+class Post6(models.Model):
+    name=models.CharField(max_length=100)
+    Decimal=models.DecimalField(max_digits=5,decimal_places=2)
+
+    def __str__(self):
+        return 'DecimalField_Post'
+
+
+class Post7(models.Model):
+    name=models.CharField(max_length=100)
+    Email=models.EmailField()
+
+    def __str__(self):
+        return 'EmailField_Post'
+
+
+class Post8(models.Model):
+    name=models.CharField(max_length=100)
+    Floatnumber=models.FloatField()
+
+    def __str__(self):
+        return 'FloatField_Post'
+
+
+class Post9(models.Model):
+    name=models.CharField(max_length=100)
+    Ip=models.GenericIPAddressField()
+
+    def __str__(self):
+        return 'GenericIPAddressField_Post'
+
+
+class Post10(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+    def __str__(self):
+        return 'IntegerField_Post'

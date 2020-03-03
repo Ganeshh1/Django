@@ -24,7 +24,7 @@ class Post1(models.Model):
     
 class Post2(models.Model):
     name=models.CharField(max_length=100)
-    age=models.URLField()
+    URL=models.URLField()
 
     def __str__(self):
         return 'URLField_Post'
@@ -115,7 +115,7 @@ class Post13(models.Model):
 
 class Post14(models.Model):
     name=models.CharField(max_length=100)
-    age=models.DateTimeField()
+    date=models.DateTimeField()
 
     def __str__(self):
         return 'DateTimeField_Post'

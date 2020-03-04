@@ -1,5 +1,18 @@
 {% extends "blog/base.html" %}
 {% block content %}
-   <h1>About tempples</h1>
+    {% for i in Student %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+           
+            <a class="mr-2" href="#">{{ i.name}}</a>
+            <small class="text-muted">{{ i.std}}</small>
+          </div>
+          <h2><a class="article-title" href="#">{{ i.college_name}} College</a></h2>
+          <p class="article-content">Reg.No :{{ i.reg_no}}</p>
+          <p>Mark Obtained :{{i.Mark_Obtained}}</p>
+        </div>
+      </article>
+           
+    {% endfor %}
 {% endblock content %}
-

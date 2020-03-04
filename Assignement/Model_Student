@@ -1,0 +1,201 @@
+
+==================================================================================================================================================
+
+Assignment   : Making of Model name and update the data from the shell 
+Developer    : Ganesh Kumar V
+Mentor       : Teja Yerraballe
+Start Date   : 04-Mar-2020
+Update Date  : 04-Mar-2020
+
+==================================================================================================================================================
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0011_auto_20200304_1244... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py sqlmigrate blog 0011
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+BEGIN;
+--
+-- Create model Student
+--
+CREATE TABLE "blog_student" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "std" text NOT NULL, "college_name" varchar(100) NOT NULL, "reg_no" bigint NOT NULL, "Mark_Obtained" integer NOT NULL);
+--
+-- Rename field age on post11 to date
+--
+CREATE TABLE "new__blog_post11" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "date" date NOT NULL);
+INSERT INTO "new__blog_post11" ("id", "name", "date") SELECT "id", "name", "age" FROM "blog_post11";
+DROP TABLE "blog_post11";
+ALTER TABLE "new__blog_post11" RENAME TO "blog_post11";
+--
+-- Rename field age on post14 to date
+--
+CREATE TABLE "new__blog_post14" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "date" datetime NOT NULL);
+INSERT INTO "new__blog_post14" ("id", "name", "date") SELECT "id", "name", "age" FROM "blog_post14";
+DROP TABLE "blog_post14";
+ALTER TABLE "new__blog_post14" RENAME TO "blog_post14";
+--
+-- Rename field age on post2 to URL
+--
+CREATE TABLE "new__blog_post2" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "URL" varchar(200) NOT NULL);
+INSERT INTO "new__blog_post2" ("id", "name", "URL") SELECT "id", "name", "age" FROM "blog_post2";
+DROP TABLE "blog_post2";
+ALTER TABLE "new__blog_post2" RENAME TO "blog_post2";
+COMMIT;
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Student
+>>> from django.contrib.auth.modles import user
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+ModuleNotFoundError: No module named 'django.contrib.auth.modles'
+>>> from django.contrib.auth.modles import User
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+ModuleNotFoundError: No module named 'django.contrib.auth.modles'
+>>> from django.contrib.auth.models import User
+>>> a=User.objects.all()
+>>> a
+<QuerySet [<User: Ganesh>, <User: TestuUser>, <User: Ganeshh1>]>
+>>> a=Student(name='Ganesh',std='10',college_name='Sastra',reg_no=220004022,Mark_obtained=100)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 500, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Student() got an unexpected keyword argument 'Mark_obtained'
+>>> a=Student(name='Ganesh',std='10',college_name='Sastra',reg_no=220004022,Mark_Obtained=100)
+>>> b=Student('Kumar','10','Sastra',220004010,100)
+>>> b
+<Student: 10>
+>>> a
+<Student: Ganesh>
+>>> b.name
+'10'
+>>> b.college_name
+220004010
+>>> b.std
+'Sastra'
+>>> a.name
+'Ganesh'
+>>> a.college_name
+'Sastra'
+>>> b=Student(name='Kumar',std='ECE',college_name='Sastra',reg_no=220004002,Mark_Obtained=100)
+>>> a.std='CSE'
+>>> a
+<Student: Ganesh>
+>>> b
+<Student: Kumar>
+>>> c=Student(name='abi',std='CSE',college_name='Ktc',reg_no=220004012,Mark_Obtained=75)
+>>> c
+<Student: abi>
+>>> l=c
+>>> c
+<Student: abi>
+>>> l
+<Student: abi>
+>>> del c
+>>> l
+<Student: abi>
+>>> c
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'c' is not defined
+>>> c=Student(name='Venky',std='ECE',college_name='Ktc',reg_no=220004001,Mark_Obtained=80)
+>>> d=Student(name='Venky',std='ECE',college_name='Ktc',reg_no=220004001,Mark_Obtained=80)
+>>> c=Student(name='abi',std='CSE',college_name='Ktc',reg_no=220004012,Mark_Obtained=75)
+>>> e=Student(name='Hasan',std='EEE',college_name='NIT',reg_no=220004003,Mark_Obtained=85)
+>>> f=Student(name='Askar',std='E&I',college_name='NIT',reg_no=220004004,Mark_Obtained=95)
+>>> g=Student(name='Jeff',std='Civil',college_name='ABC',reg_no=220004005,Mark_Obtained=65)
+>>> h=Student(name='Jone',std='Mech',college_name='ABC',reg_no=220004006,Mark_Obtained=45)
+>>> l=[a,b,c,d,e,f,g,h]
+>>> l[0]
+<Student: Ganesh>
+>>> len(l)
+8
+>>> j=Student(name='Vishnu',std='Aero-Space',college_name='Karunya',reg_no=220004007,Mark_Obtained=100)
+>>> l.append(j)
+>>> l
+[<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>]
+>>> len(l)
+9
+>>> j=Student(name='Varadhan',std='Aero-Space',college_name='Sastra',reg_no=220004008,Mark_Obtained=100)
+>>> l.append(j)
+>>> l
+[<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>]
+>>> len(l)
+10
+>>> for i in l:
+... 
+... 
+... 
+... 
+... 
+... 
+KeyboardInterrupt
+>>> l.filter(std='ECE')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'filter'
+>>> k=Student.objects.all()
+>>> k
+<QuerySet []>
+>>> a
+<Student: Ganesh>
+>>> a.save()
+>>> k=Student.objects.all()
+>>> k
+<QuerySet [<Student: Ganesh>]>
+>>> for i in l:
+...     i.save()
+... 
+>>> k=Student.objects.all()
+>>> k
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>]>
+>>> a=k.filter(std='ECE')
+>>> a
+<QuerySet [<Student: Kumar>, <Student: Venky>]>
+>>> b=k.filter(college_name='Sastra')
+>>> b
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: Varadhan>]>
+>>> for i in b:
+...     print(i.name)
+...     print(i.std,i.Mark_obtained)
+... 
+Ganesh
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 3, in <module>
+AttributeError: 'Student' object has no attribute 'Mark_obtained'
+>>> for i in b:
+...     print(i.std,i.Mark_Obtained)
+...     print(i.name)
+... 
+CSE 100
+Ganesh
+ECE 100
+Kumar
+Aero-Space 100
+Varadhan
+>>> 
+

@@ -11,11 +11,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+            return("/blog/%s/" %(self.id))
 
 
 class Post1(models.Model):
     name=models.CharField(max_length=100)
     age=models.TextField()
+
 
     
 
@@ -140,5 +144,16 @@ class Post17(models.Model):
 
     def __str__(self):
         return 'FloatField_Post'
+
+class  Student(models.Model):
+    name=models.CharField(max_length=100)
+    std=models.TextField()
+    college_name=models.CharField(max_length=100)
+    reg_no=models.BigIntegerField()
+    Mark_Obtained=models.IntegerField()
+
+    def __str__(self):
+        return self.name
+    
 
 

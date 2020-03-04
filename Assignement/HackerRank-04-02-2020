@@ -1,0 +1,47 @@
+
+
+==================================================================================================================================================
+
+Assignment   : HackerRank Problem(Level:Medium) 
+Developer    : Ganesh Kumar V
+Mentor       : Teja Yerraballe
+Start Date   : 04-Mar-2020
+Update Date  : 04-Mar-2020
+
+==================================================================================================================================================
+1.Write a Function to Find wheather the given year is leap year or not
+
+def is_leap(year):
+    leap = False
+    if(year%4==0):
+        if(year%100==0):
+            if(year%400==0):
+                leap=True
+        else:
+            leap=True
+
+    # Write your logic here
+    
+    return leap
+
+2.Print the set of number upto the given number.
+
+
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(1,n+1):
+        print(i,end='')
+
+3.You are asked to ensure that the first and last names of people begin with a capital letter in their passports. For example, alison heck should be capitalised correctly as Alison Heck.
+
+
+Given a full name, your task is to capitalize the name appropriately.
+
+
+
+def solve(s):
+    l=s.split(' ')
+    c=[]
+    for i in l:
+        c.append(str(i.capitalize()))
+    return ' '.join(c)

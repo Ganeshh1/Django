@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post,Post1
+from .models import Post,Post1,Student
 
 
 # from django.http import HttpResponse
@@ -11,7 +11,7 @@ def home(request):
     return render(request,'blog/home.html',context)
 def about(request):
     context={
-        'posts':Post1.objects.all()
+        'Student':Student.objects.all()
     }
 
     return render(request,'blog/about.html',context)

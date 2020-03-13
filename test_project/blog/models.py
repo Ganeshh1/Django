@@ -147,13 +147,75 @@ class Post17(models.Model):
 
 class  Student(models.Model):
     name=models.CharField(max_length=100)
-    std=models.TextField()
+    Branch=models.TextField()
     college_name=models.CharField(max_length=100)
     reg_no=models.BigIntegerField()
-    Mark_Obtained=models.IntegerField()
+    Mark_Obtained=models.IntegerField(default=0)
+    maths=models.IntegerField()
+    science=models.IntegerField()
+    english=models.IntegerField()
+    social=models.IntegerField()
+    
+    def __str__(self):
+        return self.name
+class Employee(models.Model):
+    name=models.CharField(max_length=100)
+    Emp_id=models.IntegerField()
+    Emp_salary=models.IntegerField()
+    Emp_email=models.EmailField()
+    Emp_age=models.IntegerField()
 
     def __str__(self):
         return self.name
+class Book(models.Model):
+    title=models.CharField(max_length=100)
+    content=models.TextField()
+    date_posted= models.DateTimeField(default=timezone.now)
+    author=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+class Car(models.Model):
+    car_name=models.CharField(max_length=100)
+    car_id=models.IntegerField()
+    car_amount=models.IntegerField()
+    car_details=models.CharField(max_length=100)
+    car_model=models.IntegerField()
+
+    def __str__(self):
+        return self.car_name
+class Product(models.Model):
+    product_name=models.CharField(max_length=100)
+    product_id=models.IntegerField()
+    product_amount=models.IntegerField()
+    product_details=models.CharField(max_length=100)
     
+    def __str__(self):
+        return self.product_name
+
+class Subjects(models.Model):
+    maths=models.IntegerField()
+    science=models.IntegerField()
+    english=models.IntegerField()
+    social=models.IntegerField()
 
 
+class School(models.Model):
+    school_name=models.CharField(max_length=100)
+    Sub_mark=models.ForeignKey(Subjects,on_delete=models.CASCADE)
+
+
+
+class StudentDetails(models.Model):
+    name=models.CharField(max_length=100)
+    reg_no=models.BigIntegerField()
+    school=models.ForeignKey(School,on_delete=models.CASCADE)
+    phone_no=models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+
+
+
+    

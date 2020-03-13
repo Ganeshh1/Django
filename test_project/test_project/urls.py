@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'^blog/$',include('blog.urls')),
     path('about/',include('blog.urls')),
+    path('display/',include('blog.urls')),
 ]

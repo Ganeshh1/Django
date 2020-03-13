@@ -1,0 +1,39 @@
+==================================================================================================================================================
+
+Assignment   : HackerRank Problem(Level:Medium) 
+Developer    : Ganesh Kumar V
+Mentor       : Teja Yerraballe
+Start Date   : 09-Mar-2020
+Update Date  : 09-Mar-2020
+
+==================================================================================================================================================
+
+
+===========================================================Rational Product===================================================================
+Given a list of rational numbers,find their product.
+
+from fractions import Fraction
+from functools import reduce
+import operator
+def product(fracs):
+    t = reduce(operator.mul,fracs)# complete this line with a reduce statement
+    return t.numerator, t.denominator
+
+if __name__ == '__main__':
+    fracs = []
+    for _ in range(int(input())):
+        fracs.append(Fraction(*map(int, input().split())))
+    result = product(fracs)
+    print(*result)
+
+===========================================================Pattern Printing====================================================================
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print([1,22,333,4444,55555,666666,7777777,88888888,9999999999][i-1])
+
+or
+for i in range(1,int(input())):
+    print(str(i)*i)
+
+
+
+

@@ -1,0 +1,39 @@
+==================================================================================================================================================
+
+Assignment   : HackerRank Problem(Level:Medium) 
+Developer    : Ganesh Kumar V
+Mentor       : Teja Yerraballe
+Start Date   : 13-Mar-2020
+Update Date  : 13-Mar-2020
+
+==================================================================================================================================================
+1.Iterators 
+from itertools import combinations
+
+N = int(input())
+L = input().split()
+K = int(input())
+
+C = list(combinations(L, K))
+F = filter(lambda c: 'a' in c, C)
+print("{0:.3}".format(len(list(F))/len(C)))
+
+2.Merge the Tools
+
+def merge_the_tools(string, k):
+    # your code goes here
+    # S, N = input(), int(input()) 
+    for part in zip(*[iter(string)] * k):
+        d = dict()
+        print(''.join([ d.setdefault(c, c) for c in part if c not in d ]))
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+
+3.Regex Substitution
+
+import re
+N = int(input())
+
+for i in range(N):
+    print (re.sub(r'(?<= )(&&|\|\|)(?= )', lambda x: 'and' if x.group() == '&&' else 'or',input()))

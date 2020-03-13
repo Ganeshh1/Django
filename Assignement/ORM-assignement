@@ -1,0 +1,1767 @@
+==================================================================================================================================================
+
+Assignment   : ORM-Assignment
+Developer    : Ganesh Kumar V
+Mentor       : Teja Yerraballe
+Start Date   : 10-Mar-2020
+Update Date  : 13-Mar-2020
+
+==================================================================================================================================================
+
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0014_student_mark_obtained...Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: new__blog_student.Mark_Obtained
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 395, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/base.py", line 328, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/base.py", line 369, in execute
+    output = self.handle(*args, **options)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/base.py", line 83, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 233, in handle
+    fake_initial=fake_initial,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 245, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 124, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 112, in database_forwards
+    field,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/sqlite3/schema.py", line 328, in add_field
+    self._remake_table(model, create_field=field)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/sqlite3/schema.py", line 287, in _remake_table
+    self.quote_name(model._meta.db_table),
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 142, in execute
+    cursor.execute(sql, params)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: new__blog_student.Mark_Obtained
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0014_student_mark_obtained... OK
+  Applying blog.0015_auto_20200310_0952... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 377, in execute
+    django.setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 148, in <module>
+    class  Student(models.Model):
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 158, in Student
+    Mark_Obtained=maths+science+social+english    
+TypeError: unsupported operand type(s) for +: 'IntegerField' and 'IntegerField'
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Student
+>>> Student.objects.all()
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+>>> Student.objects.all()[0].Mark_Obtained
+0
+>>> add(Student.objects.all()[0:].maths)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'add' is not defined
+>>> Student.objects.all().order_by('college_name')
+<QuerySet [<Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Dasta>, <Student: Ganesh>, <Student: Kumar>, <Student: Varadhan>, <Student: Ganesh>]>
+>>> a=Student.objects.all().order_by('college_name')
+>>> a[0].college_name
+'ABC'
+>>> a[1].college_name
+'ABC'
+>>> for i in range(0,a,count()-1):
+...     print(a[i].college_name)
+... 
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'count' is not defined
+>>> for i in range(0,a.count()-1):
+...     print(a[i].college_name)
+... 
+ABC
+ABC
+Karunya
+Ktc
+Ktc
+NIT
+NIT
+NIT
+Sastra
+Sastra
+Sastra
+>>> a[0]__dict__
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 64, in runsource
+    code = self.compile(source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 168, in __call__
+    return _maybe_compile(self.compiler, source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 99, in _maybe_compile
+    raise err1
+  File "/usr/lib/python3.6/codeop.py", line 87, in _maybe_compile
+    code1 = compiler(source + "\n", filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 133, in __call__
+    codeob = compile(source, filename, symbol, self.flags, 1)
+  File "<console>", line 1
+    a[0]__dict__
+               ^
+SyntaxError: invalid syntax
+>>> a[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f7b5e0d0438>, 'id': 7, 'name': 'Jeff', 'Branch': 'Civil', 'college_name': 'ABC', 'reg_no': 220004005, 'Mark_Obtained': 0, 'maths': 80, 'science': 50, 'english': 65, 'social': 21}
+>>> a[0].Mark_Obtained=a[0].maths+a[0].science+a[0].english+a[0].social
+>>> a[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f7b5e0d0c88>, 'id': 7, 'name': 'Jeff', 'Branch': 'Civil', 'college_name': 'ABC', 'reg_no': 220004005, 'Mark_Obtained': 0, 'maths': 80, 'science': 50, 'english': 65, 'social': 21}
+>>> a[0].Mark_Obtained
+0
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Student
+>>> Students.objects.all()[0].Mark_Obtained=100
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Students' is not defined
+>>> Student.objects.all()[0].Mark_Obtained=100
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f8d54d5ab00>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].maths=100
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f8d54d5acc0>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f8d54d5ad30>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].Mark_Obtained=100
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f8d54d5acf8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Migrations for 'blog':
+  blog/migrations/0016_auto_20200310_1236.py
+    - Alter field Mark_Obtained on student
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0016_auto_20200310_1236... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Student
+>>> Student.objects.all()[0].Mark_Obtained=100
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f760ea890b8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].Mark_Obtained=90
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f760ea892e8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].Mark_Obtained=90
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f760ea89358>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f760ea89400>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].Mark_Obtained=90
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f760ea894a8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Migrations for 'blog':
+  blog/migrations/0017_auto_20200310_1239.py
+    - Alter field Mark_Obtained on student
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0017_auto_20200310_1239... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Student
+>>> 
+>>> Student.objects.all()[0].Mark_Obtained=100
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed50b8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0].Mark_Obtained=200
+>>> Student.objects.all()[0].save()
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed52e8>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 0, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> Student.objects.all()[0]
+<Student: Ganesh>
+>>> a=Student.objects.all()[0]
+>>> a.Mark_Obtained=200
+>>> a.save()
+>>> a.Mark_Obtained
+200
+>>> Student.objects.all()[0].__dict__
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5358>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 200, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+>>> a=Student.objects.all()
+>>> for i in a:
+...     i.Mark_Obtained=i.maths+i.science+i.english+i.social
+...     i.save()
+...     i.__dict__
+... 
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5080>, 'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 281, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5198>, 'id': 2, 'name': 'Kumar', 'Branch': 'ECE', 'college_name': 'Sastra', 'reg_no': 220004002, 'Mark_Obtained': 371, 'maths': 81, 'science': 96, 'english': 100, 'social': 94}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed50b8>, 'id': 3, 'name': 'abi', 'Branch': 'CSE', 'college_name': 'Ktc', 'reg_no': 220004012, 'Mark_Obtained': 197, 'maths': 89, 'science': 0, 'english': 75, 'social': 33}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5c50>, 'id': 4, 'name': 'Venky', 'Branch': 'ECE', 'college_name': 'Ktc', 'reg_no': 220004001, 'Mark_Obtained': 302, 'maths': 63, 'science': 84, 'english': 80, 'social': 75}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5cc0>, 'id': 5, 'name': 'Hasan', 'Branch': 'EEE', 'college_name': 'NIT', 'reg_no': 220004003, 'Mark_Obtained': 248, 'maths': 48, 'science': 75, 'english': 85, 'social': 40}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5d30>, 'id': 6, 'name': 'Askar', 'Branch': 'E&I', 'college_name': 'NIT', 'reg_no': 220004004, 'Mark_Obtained': 273, 'maths': 85, 'science': 77, 'english': 95, 'social': 16}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5da0>, 'id': 7, 'name': 'Jeff', 'Branch': 'Civil', 'college_name': 'ABC', 'reg_no': 220004005, 'Mark_Obtained': 216, 'maths': 80, 'science': 50, 'english': 65, 'social': 21}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5e10>, 'id': 8, 'name': 'Jone', 'Branch': 'Mech', 'college_name': 'ABC', 'reg_no': 220004006, 'Mark_Obtained': 165, 'maths': 67, 'science': 2, 'english': 45, 'social': 51}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5e80>, 'id': 9, 'name': 'Vishnu', 'Branch': 'Aero-Space', 'college_name': 'Karunya', 'reg_no': 220004007, 'Mark_Obtained': 265, 'maths': 63, 'science': 50, 'english': 100, 'social': 52}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5ef0>, 'id': 10, 'name': 'Varadhan', 'Branch': 'Aero-Space', 'college_name': 'Sastra', 'reg_no': 220004008, 'Mark_Obtained': 234, 'maths': 33, 'science': 70, 'english': 100, 'social': 31}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5f60>, 'id': 11, 'name': 'Dasta', 'Branch': 'EEE', 'college_name': 'NIT', 'reg_no': 220004055, 'Mark_Obtained': 304, 'maths': 62, 'science': 89, 'english': 75, 'social': 78}
+{'_state': <django.db.models.base.ModelState object at 0x7f64d9ed5fd0>, 'id': 12, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004033, 'Mark_Obtained': 243, 'maths': 55, 'science': 56, 'english': 100, 'social': 32}
+>>> from django.db.models import Avg
+>>> Student.objects.all().aggregate(Avg('maths'))
+{'maths__avg': 68.25}
+>>> dir(Student)
+['Branch', 'DoesNotExist', 'Mark_Obtained', 'MultipleObjectsReturned', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_check_column_name_clashes', '_check_constraints', '_check_field_name_clashes', '_check_fields', '_check_id_field', '_check_index_together', '_check_indexes', '_check_local_fields', '_check_long_column_names', '_check_m2m_through_same_relationship', '_check_managers', '_check_model', '_check_model_name_db_lookup_clashes', '_check_ordering', '_check_property_name_related_field_accessor_clashes', '_check_single_primary_key', '_check_swappable', '_check_unique_together', '_do_insert', '_do_update', '_get_FIELD_display', '_get_next_or_previous_by_FIELD', '_get_next_or_previous_in_order', '_get_pk_val', '_get_unique_checks', '_meta', '_perform_date_checks', '_perform_unique_checks', '_save_parents', '_save_table', '_set_pk_val', 'check', 'clean', 'clean_fields', 'college_name', 'date_error_message', 'delete', 'english', 'from_db', 'full_clean', 'get_deferred_fields', 'id', 'maths', 'name', 'objects', 'pk', 'prepare_database_save', 'refresh_from_db', 'reg_no', 'save', 'save_base', 'science', 'serializable_value', 'social', 'unique_error_message', 'validate_unique']
+>>> 
+>>> Student.objects.all().__avg('maths')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute '__avg'
+>>> from django.db.models import Avg,Max,Min
+>>> a=Student.objects.all()[0]
+>>> a.aggrigate(a.maths+a.social+a.english+a.science)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'aggrigate'
+>>> Student.objects.all().aggregate(Avg('maths'),Max('reg_no',Min('reg_no'))
+... )
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 65, in default_alias
+    raise TypeError("Complex expressions require an alias")
+TypeError: Complex expressions require an alias
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> Student.objects.all().aggregate(Avg('maths'),Max('reg_no'),Min('reg_no'))
+{'maths__avg': 68.25, 'reg_no__max': 220004055, 'reg_no__min': 220004001}
+>>> from django.db.models import Avg,Max,Min,Sum
+>>> Sum(10,20)
+Sum(Value(10), Value(20))
+>>> Student.objects.all().aggregate(Sum('maths','english','social','science'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 65, in default_alias
+    raise TypeError("Complex expressions require an alias")
+TypeError: Complex expressions require an alias
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> Student.objects.aggregate(Sum('maths','english','social','science'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 65, in default_alias
+    raise TypeError("Complex expressions require an alias")
+TypeError: Complex expressions require an alias
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> t=Student.objects.aggregate(total=Sum('maths','english','social','science'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 384, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 502, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1131, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 490, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 51, in pre_sql_setup
+    self.setup_query()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 42, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 257, in get_select
+    sql, params = self.compile(col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in compile
+    sql, params = vendor_impl(self, self.connection)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 22, in as_sqlite
+    sql, params = self.as_sql(compiler, connection, **extra_context)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 88, in as_sql
+    return super().as_sql(compiler, connection, **extra_context)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 620, in as_sql
+    connection.ops.check_expression_support(self)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/sqlite3/operations.py", line 62, in check_expression_support
+    "SQLite doesn't support DISTINCT on aggregate functions "
+django.db.utils.NotSupportedError: SQLite doesn't support DISTINCT on aggregate functions accepting multiple arguments.
+>>> t=Student.objects.aggregate(Sum('maths'))
+>>> t
+{'maths__sum': 819}
+>>> t=Student.objects.aggregate(Sum('maths__social'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1585, in transform
+    return self.try_transform(wrapped, name)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1200, in try_transform
+    "permitted%s" % (name, output_field.__name__, suggestion)
+django.core.exceptions.FieldError: Unsupported lookup 'social' for IntegerField or join on the field not permitted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 381, in aggregate
+    query.add_annotation(aggregate_expr, alias, is_summary=True)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1021, in add_annotation
+    summarize=is_summary)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 616, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 531, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1693, in resolve_ref
+    join_info.transform_function(targets[0], final_alias)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1589, in transform
+    raise last_field_exception
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1567, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1516, in names_to_path
+    " not permitted." % (names[pos + 1], name))
+django.core.exceptions.FieldError: Cannot resolve keyword 'social' into field. Join on 'maths' not permitted.
+>>> t=Student.objects.Sum('maths')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'Sum'
+>>> t=Student.objects.all().Sum('maths')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Sum'
+>>> from django.db.models import Q
+>>> t=Count('Student',filter=Q(Student__maths__et=50))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Count' is not defined
+>>> from django.db.models import Count
+>>> t=Count('Student',filter=Q(Student__maths__et=50))
+>>> t
+Count(F(Student), filter=(AND: ('Student__maths__et', 50)))
+>>> c=Student.objects.annotate(below=t)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1071, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1021, in add_annotation
+    summarize=is_summary)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 616, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 531, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1684, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1567, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Student' into field. Choices are: Branch, Mark_Obtained, college_name, english, id, maths, name, reg_no, science, social
+>>> c=maths.objects.annotate(below=t)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'maths' is not defined
+>>> Student.objects.count()
+12
+>>> Student.objects.filter(Student__name='Ganesh')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1381, in _add_q
+    check_filterable=check_filterable,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1250, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1087, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'Student' into field. Choices are: Branch, Mark_Obtained, college_name, english, id, maths, name, reg_no, science, social
+>>> Student.objects.aggregate(Average_mark_of_Science=Avg('science))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 64, in runsource
+    code = self.compile(source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 168, in __call__
+    return _maybe_compile(self.compiler, source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 99, in _maybe_compile
+    raise err1
+  File "/usr/lib/python3.6/codeop.py", line 87, in _maybe_compile
+    code1 = compiler(source + "\n", filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 133, in __call__
+    codeob = compile(source, filename, symbol, self.flags, 1)
+  File "<console>", line 1
+    Student.objects.aggregate(Average_mark_of_Science=Avg('science))
+                                                                   ^
+SyntaxError: EOL while scanning string literal
+>>> Student.objects.aggregate(Average_mark_of_Science=Avg('science'))
+{'Average_mark_of_Science': 59.416666666666664}
+>>> Student.objects.aggregate(Average_mark_of_English=Avg('english'))
+{'Average_mark_of_English': 85.0}
+>>> Student.objects.aggregate(Average_mark_of_English=Avg('maths'))
+{'Average_mark_of_English': 68.25}
+>>> Student.objects.aggregate(Average_mark_of_English=Avg('social'))
+{'Average_mark_of_English': 45.583333333333336}
+>>> Student.objects.aggregate(Sum('maths'))
+{'maths__sum': 819}
+>>> Student.objects.aggregate(Count('name'))
+{'name__count': 12}
+>>> Student.objects.aggregate(Count('maths'))
+{'maths__count': 12}
+>>> Student.objects.all()[0].explain()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'explain'
+>>> Student.objects.all().filter(name='Ganesh').explain()
+'0 0 0 SCAN TABLE blog_student'
+>>> Student.objects.all().filter(name='Ganesh').explain('Branch')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: explain() takes 1 positional argument but 2 were given
+>>> Student.objects.annotate(Count('maths'))
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+>>> Student.objects.aggregate(Count('maths'))
+{'maths__count': 12}
+>>> Student.objects.aggregate(Count('maths'),Count('name'))
+{'maths__count': 12, 'name__count': 12}
+>>> a=Student.objects.aggregate(Count('maths'),Count('name'))
+>>> a
+{'maths__count': 12, 'name__count': 12}
+>>> a[0]
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+KeyError: 0
+>>> a.get(1)
+>>> a
+{'maths__count': 12, 'name__count': 12}
+>>> a=a.get(1)
+>>> a
+>>> print(a)
+None
+>>> a=Student.objects.aggregate(Count('maths'),Avg('maths'))
+>>> a
+{'maths__count': 12, 'maths__avg': 68.25}
+>>> a=Student.objects.all()[0]
+>>> Avg(a)
+Avg(Value(Ganesh))
+>>> Avg(a.maths,a.science)
+Avg(Value(93), Value(64))
+>>> Avg(a.maths+a.science)
+Avg(Value(157))
+>>> Student.objects.aggregate(Avg(a.maths),Avg('maths'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 65, in default_alias
+    raise TypeError("Complex expressions require an alias")
+TypeError: Complex expressions require an alias
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> Student.objects.aggregate(Avg('a.maths'),Avg('maths'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 381, in aggregate
+    query.add_annotation(aggregate_expr, alias, is_summary=True)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1021, in add_annotation
+    summarize=is_summary)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 616, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 531, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1684, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1567, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'a.maths' into field. Choices are: Branch, Mark_Obtained, college_name, english, id, maths, name, reg_no, science, social
+>>> Avg(a)
+Avg(Value(Ganesh))
+>>> a=a.Avg
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'Avg'
+>>> Student.objects.filter(name='Ganesh').aggregate(Avg='maths')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 368, in aggregate
+    self._validate_values_are_expressions((*args, *kwargs.values()), method_name='aggregate')
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.aggregate() received non-expression(s): maths.
+>>> Student.objects.filter(name='Ganesh').aggregate(Avg('maths'))
+{'maths__avg': 74.0}
+>>> Student.objects.filter(name='Ganesh').aggregate(Sum('maths','science'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 65, in default_alias
+    raise TypeError("Complex expressions require an alias")
+TypeError: Complex expressions require an alias
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> Student.objects.aggregate()
+{}
+>>> Student.objects.aggregate(0)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 368, in aggregate
+    self._validate_values_are_expressions((*args, *kwargs.values()), method_name='aggregate')
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.aggregate() received non-expression(s): 0.
+>>> Student.objects.values('maths','social').aggregate()
+{}
+>>> 
+>>> Student.objects.all()[0].values('maths','social').aggregate()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'values'
+>>> a=Student.objects.all()[0]
+>>> a.values()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'values'
+>>> a.values('maths')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'values'
+>>> Student.objects.all()[0].values('name').aggregate(Avg('maths')+Avg('social'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'values'
+>>> Student.objects.all()[0].aggregate(Avg('maths')+Avg('social'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'aggregate'
+>>> Student.objects.all().aggregate(Avg('maths')+Avg('social'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+AttributeError: 'CombinedExpression' object has no attribute 'default_alias'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> a=Student.objects.all().aggregate(Avg('maths')+Avg('social'))
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 374, in aggregate
+    arg.default_alias
+AttributeError: 'CombinedExpression' object has no attribute 'default_alias'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 376, in aggregate
+    raise TypeError("Complex aggregates require an alias")
+TypeError: Complex aggregates require an alias
+>>> a=Student.objects.all().aggregate(Avg('math'),Avg('social'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 381, in aggregate
+    query.add_annotation(aggregate_expr, alias, is_summary=True)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1021, in add_annotation
+    summarize=is_summary)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 616, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 531, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1684, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1567, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'math' into field. Choices are: Branch, Mark_Obtained, college_name, english, id, maths, name, reg_no, science, social
+>>> a=Student.objects.aggregate(Avg('math'),Avg('social'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 381, in aggregate
+    query.add_annotation(aggregate_expr, alias, is_summary=True)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1021, in add_annotation
+    summarize=is_summary)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 616, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/expressions.py", line 531, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1684, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1567, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'math' into field. Choices are: Branch, Mark_Obtained, college_name, english, id, maths, name, reg_no, science, social
+>>> a=Student.objects.aggregate(Avg('maths'),Avg('social'))
+>>> a
+{'maths__avg': 68.25, 'social__avg': 45.583333333333336}
+>>> a=Student.objects.aggregate(Avg('maths'),Avg('social'))[0]
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+KeyError: 0
+>>> a=Student.objects.aggregate(Avg('maths'),Avg('social')).annotate()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'annotate'
+>>> a=Student.objects.annotate('name').aggregate(Avg('maths'),Avg('social'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1042, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): name.
+>>> a=Student.objects.annotate(Count('name')).aggregate(Avg('maths'),Avg('social'))
+>>> a
+{'maths__avg': 68.25, 'social__avg': 45.583333333333336}
+>>> dir()
+['Avg', 'Count', 'Max', 'Min', 'Q', 'Student', 'Sum', '__builtins__', 'a', 'i', 't']
+>>> import django.db.models
+>>> dir()
+['Avg', 'Count', 'Max', 'Min', 'Q', 'Student', 'Sum', '__builtins__', 'a', 'django', 'i', 't']
+>>> dir(i)
+['Branch', 'DoesNotExist', 'Mark_Obtained', 'MultipleObjectsReturned', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_check_column_name_clashes', '_check_constraints', '_check_field_name_clashes', '_check_fields', '_check_id_field', '_check_index_together', '_check_indexes', '_check_local_fields', '_check_long_column_names', '_check_m2m_through_same_relationship', '_check_managers', '_check_model', '_check_model_name_db_lookup_clashes', '_check_ordering', '_check_property_name_related_field_accessor_clashes', '_check_single_primary_key', '_check_swappable', '_check_unique_together', '_do_insert', '_do_update', '_get_FIELD_display', '_get_next_or_previous_by_FIELD', '_get_next_or_previous_in_order', '_get_pk_val', '_get_unique_checks', '_meta', '_perform_date_checks', '_perform_unique_checks', '_save_parents', '_save_table', '_set_pk_val', '_state', 'check', 'clean', 'clean_fields', 'college_name', 'date_error_message', 'delete', 'english', 'from_db', 'full_clean', 'get_deferred_fields', 'id', 'maths', 'name', 'objects', 'pk', 'prepare_database_save', 'refresh_from_db', 'reg_no', 'save', 'save_base', 'science', 'serializable_value', 'social', 'unique_error_message', 'validate_unique']
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 377, in execute
+    django.setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 161, in <module>
+    class Employee:
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 165, in Employee
+    Emp_email=models.Email()
+AttributeError: module 'django.db.models' has no attribute 'Email'
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Migrations for 'blog':
+  blog/migrations/0018_auto_20200310_1801.py
+    - Create model Book
+    - Alter field Mark_Obtained on student
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0018_auto_20200310_1801... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Post,Employee,Book,Car,Student
+>>> Employee.objects.all()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Employee' has no attribute 'objects'
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+blog.Car.car_details: (fields.E120) CharFields must define a 'max_length' attribute.
+blog.Product.product_details: (fields.E120) CharFields must define a 'max_length' attribute.
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Migrations for 'blog':
+  blog/migrations/0019_car_employee_product.py
+    - Create model Car
+    - Create model Employee
+    - Create model Product
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0019_car_employee_product... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Post,Employee,Book,Car,Student
+>>> Employee.objects.all()
+<QuerySet []>
+>>> a=Employee(name='ABC',Emp_id=1,Emp_salary=10000,Emp_email=abc@company.com,Emp_age=21)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'abc' is not defined
+>>> a=Employee(name='ABC',Emp_id=1,Emp_salary=10000,Emp_email=Abc@company.com,Emp_age=21)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Abc' is not defined
+>>> a=Employee(name='ABC',Emp_id=1,Emp_salary=10000,Emp_email=123@company.com,Emp_age=21)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'company' is not defined
+>>> a=Employee(name='ABC',Emp_id=1,Emp_salary=10000,Emp_age=21)
+>>> a
+<Employee: ABC>
+>>> a.save()
+>>> a=Employee(name='XYZ',Emp_id=2,Emp_salary=100000,Emp_age=22)
+>>> a.save()
+>>> a=Student.objects.create(name='Jai',Emp_id=3,Emp_salary=20200,Emp_age=30)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 431, in create
+    obj = self.model(**kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 500, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Student() got an unexpected keyword argument 'Emp_id'
+>>> a=Student.objects.create(name='Jai',Emp_salary=20200,Emp_age=30)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 431, in create
+    obj = self.model(**kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 500, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Student() got an unexpected keyword argument 'Emp_salary'
+>>> a=Employee(name='Jai',Emp_id=3,Emp_salary=10300,Emp_age=32)
+>>> a.save()
+>>> Employee.objects.all()
+<QuerySet [<Employee: ABC>, <Employee: XYZ>, <Employee: Jai>]>
+>>> a=Book(title='2States',content='Love',author='Chatan Bhagath')
+>>> a.save()
+>>> a=Book(title='Harry Potter',content='School-based',author='J K Rowling')
+>>> a.save()
+>>> a=Book(title='Why to live',content='How ',author='Ponni')
+>>> a.save()
+>>> Book.objects.all()
+<QuerySet [<Book: 2States>, <Book: Harry Potter>, <Book: Why to live>]>
+>>> a=Car(car_name='BMW',car_id=1,car_amount=123123123,car_details='Royal Class',car_model='Desiel Engine')
+>>> a.save()
+Traceback (most recent call last):
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'Desiel Engine'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1383, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1328, in as_sql
+    for obj in self.query.objs
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1328, in <listcomp>
+    for obj in self.query.objs
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1327, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1268, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 816, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1776, in get_prep_value
+    ) from e
+ValueError: Field 'car_model' expected a number but got 'Desiel Engine'.
+>>> a=Car(car_name='BMW',car_id=1,car_amount=123123123,car_details='Royal Class',car_model='1980')
+>>> a.save()
+>>> a=Car(car_name='Range-Rover',car_id=2,car_amount=12312312300,car_details='Royal',car_model='2000')
+>>> a.save()
+>>> a=Car(car_name='Audi',car_id=3,car_amount=12312312,car_details='Royal',car_model='2020')
+>>> a.save()
+>>> a=Product(product_name='Hammam',product_id=1,product_amount=10,product_details='Soap')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Product' is not defined
+>>> a=Product(product_name='Hammam',product_id=1,product_amount=10,product_details='Soap')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Product' is not defined
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Product
+>>> Product.objects.all()
+<QuerySet []>
+>>> 
+>>> a=Product(product_name='Hammam',product_id=1,product_amount=10,product_details='Soap')
+>>> a.save()
+>>> a=Product(product_name='Dettol',product_id=2,product_amount=15,product_details='Soap-Handwash')
+>>> a.save()
+>>> a=Product(product_name='Himalaya',product_id=3,product_amount=20,product_details='Handwash')
+>>> a.save()
+>>> from blog.models import Product,Student,Post,Car,Book,Employee
+>>> for i in [Product,Student,Post,Car,Book,Employee]:
+...     i.objects.all()
+... 
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 2, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 255, in __repr__
+    return '<%s %r>' % (self.__class__.__name__, data)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 518, in __repr__
+    return '<%s: %s>' % (self.__class__.__name__, self)
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 194, in __str__
+    return self.name
+AttributeError: 'Product' object has no attribute 'name'
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+No changes detected
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Product,Student,Post,Car,Book,Employee
+>>> 
+>>> for i in [Post,Car,Student,Employee,Product]:
+...     i.objects.all()
+... 
+<QuerySet [<Post: Blog 1>, <Post: Blog 2>, <Post: blog 4>, <Post: Hi baby>]>
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 2, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 255, in __repr__
+    return '<%s %r>' % (self.__class__.__name__, data)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/base.py", line 518, in __repr__
+    return '<%s: %s>' % (self.__class__.__name__, self)
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 186, in __str__
+    return self.name
+AttributeError: 'Car' object has no attribute 'name'
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Product,Student,Post,Car,Book,Employee
+>>> for i in [Post,Car,Student,Employee,Product]:
+...     i.objects.all()
+... 
+<QuerySet [<Post: Blog 1>, <Post: Blog 2>, <Post: blog 4>, <Post: Hi baby>]>
+<QuerySet [<Car: BMW>, <Car: Range-Rover>, <Car: Audi>]>
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+<QuerySet [<Employee: ABC>, <Employee: XYZ>, <Employee: Jai>]>
+<QuerySet [<Product: Hammam>, <Product: Dettol>, <Product: Himalaya>]>
+>>> for i in [Post,Car,Student,Employee,Product]:
+... 
+... 
+... 
+... 
+KeyboardInterrupt
+>>> for i in [Post,Car,Student,Employee,Product,Book]:
+...     i.objects.all()
+... 
+<QuerySet [<Post: Blog 1>, <Post: Blog 2>, <Post: blog 4>, <Post: Hi baby>]>
+<QuerySet [<Car: BMW>, <Car: Range-Rover>, <Car: Audi>]>
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+<QuerySet [<Employee: ABC>, <Employee: XYZ>, <Employee: Jai>]>
+<QuerySet [<Product: Hammam>, <Product: Dettol>, <Product: Himalaya>]>
+<QuerySet [<Book: 2States>, <Book: Harry Potter>, <Book: Why to live>]>
+>>> for i in Student.objects.all():
+...     print(i)
+... 
+Ganesh
+Kumar
+abi
+Venky
+Hasan
+Askar
+Jeff
+Jone
+Vishnu
+Varadhan
+Dasta
+Ganesh
+>>> Student.objects.all()[:5]
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>]>
+>>> Student.objects.all()[::-1]
+[<Student: Ganesh>, <Student: Dasta>, <Student: Varadhan>, <Student: Vishnu>, <Student: Jone>, <Student: Jeff>, <Student: Askar>, <Student: Hasan>, <Student: Venky>, <Student: abi>, <Student: Kumar>, <Student: Ganesh>]
+>>> Student.objects.all()[::-2]
+[<Student: Ganesh>, <Student: Varadhan>, <Student: Jone>, <Student: Askar>, <Student: Venky>, <Student: Kumar>]
+>>> Student.objects.all()[::]
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+>>> import pickle
+>>> dir(pickle)
+['ADDITEMS', 'APPEND', 'APPENDS', 'BINBYTES', 'BINBYTES8', 'BINFLOAT', 'BINGET', 'BININT', 'BININT1', 'BININT2', 'BINPERSID', 'BINPUT', 'BINSTRING', 'BINUNICODE', 'BINUNICODE8', 'BUILD', 'DEFAULT_PROTOCOL', 'DICT', 'DUP', 'EMPTY_DICT', 'EMPTY_LIST', 'EMPTY_SET', 'EMPTY_TUPLE', 'EXT1', 'EXT2', 'EXT4', 'FALSE', 'FLOAT', 'FRAME', 'FROZENSET', 'FunctionType', 'GET', 'GLOBAL', 'HIGHEST_PROTOCOL', 'INST', 'INT', 'LIST', 'LONG', 'LONG1', 'LONG4', 'LONG_BINGET', 'LONG_BINPUT', 'MARK', 'MEMOIZE', 'NEWFALSE', 'NEWOBJ', 'NEWOBJ_EX', 'NEWTRUE', 'NONE', 'OBJ', 'PERSID', 'POP', 'POP_MARK', 'PROTO', 'PUT', 'PickleError', 'Pickler', 'PicklingError', 'PyStringMap', 'REDUCE', 'SETITEM', 'SETITEMS', 'SHORT_BINBYTES', 'SHORT_BINSTRING', 'SHORT_BINUNICODE', 'STACK_GLOBAL', 'STOP', 'STRING', 'TRUE', 'TUPLE', 'TUPLE1', 'TUPLE2', 'TUPLE3', 'UNICODE', 'Unpickler', 'UnpicklingError', '_Framer', '_Pickler', '_Stop', '_Unframer', '_Unpickler', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_compat_pickle', '_dump', '_dumps', '_extension_cache', '_extension_registry', '_getattribute', '_inverted_registry', '_load', '_loads', '_test', '_tuplesize2code', 'bytes_types', 'codecs', 'compatible_formats', 'decode_long', 'dispatch_table', 'dump', 'dumps', 'encode_long', 'format_version', 'io', 'islice', 'load', 'loads', 'maxsize', 'pack', 'partial', 're', 'sys', 'unpack', 'whichmodule']
+>>> pickle('Ganesh')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> pickle.loads('Ganesh')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: a bytes-like object is required, not 'str'
+>>> pickle.loads(Ganesh)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Ganesh' is not defined
+>>> 
+>>> pickle.loads('s')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: a bytes-like object is required, not 'str'
+>>> a=Student.objects.all()
+>>> pickle.loads(a)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: a bytes-like object is required, not 'QuerySet'
+>>> a=Student.objects.all()[0]
+>>> pickle.loads(a)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+TypeError: a bytes-like object is required, not 'Student'
+>>> Student.objects.filter(Branch='ECE').order_by('?')
+<QuerySet [<Student: Kumar>, <Student: Venky>]>
+>>> Student.objects.filter(')
+KeyboardInterrupt
+>>> Student.objects.filter(Coalesce('name').desc())
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Coalesce' is not defined
+>>> Student.objects.filter(Lower('name').desc())
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Lower' is not defined
+>>> Student.objects.distinct()
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>, <Student: Askar>, <Student: Jeff>, <Student: Jone>, <Student: Vishnu>, <Student: Varadhan>, <Student: Dasta>, <Student: Ganesh>]>
+>>> Student.objects.distinct('name')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 252, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1131, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 513, in as_sql
+    distinct_params,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/base/operations.py", line 175, in distinct_sql
+    raise NotSupportedError('DISTINCT ON fields is not supported by this database backend')
+django.db.utils.NotSupportedError: DISTINCT ON fields is not supported by this database backend
+>>> Student.objects.order_by('name')distinct('name')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 64, in runsource
+    code = self.compile(source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 168, in __call__
+    return _maybe_compile(self.compiler, source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 99, in _maybe_compile
+    raise err1
+  File "/usr/lib/python3.6/codeop.py", line 87, in _maybe_compile
+    code1 = compiler(source + "\n", filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 133, in __call__
+    codeob = compile(source, filename, symbol, self.flags, 1)
+  File "<console>", line 1
+    Student.objects.order_by('name')distinct('name')
+                                           ^
+SyntaxError: invalid syntax
+>>> Student.objects.order_by('name').distinct('name')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 252, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1131, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 513, in as_sql
+    distinct_params,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/backends/base/operations.py", line 175, in distinct_sql
+    raise NotSupportedError('DISTINCT ON fields is not supported by this database backend')
+django.db.utils.NotSupportedError: DISTINCT ON fields is not supported by this database backend
+>>> Student.objects.order_by('name').values()
+<QuerySet [{'id': 6, 'name': 'Askar', 'Branch': 'E&I', 'college_name': 'NIT', 'reg_no': 220004004, 'Mark_Obtained': 273, 'maths': 85, 'science': 77, 'english': 95, 'social': 16}, {'id': 11, 'name': 'Dasta', 'Branch': 'EEE', 'college_name': 'NIT', 'reg_no': 220004055, 'Mark_Obtained': 304, 'maths': 62, 'science': 89, 'english': 75, 'social': 78}, {'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 281, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}, {'id': 12, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004033, 'Mark_Obtained': 243, 'maths': 55, 'science': 56, 'english': 100, 'social': 32}, {'id': 5, 'name': 'Hasan', 'Branch': 'EEE', 'college_name': 'NIT', 'reg_no': 220004003, 'Mark_Obtained': 248, 'maths': 48, 'science': 75, 'english': 85, 'social': 40}, {'id': 7, 'name': 'Jeff', 'Branch': 'Civil', 'college_name': 'ABC', 'reg_no': 220004005, 'Mark_Obtained': 216, 'maths': 80, 'science': 50, 'english': 65, 'social': 21}, {'id': 8, 'name': 'Jone', 'Branch': 'Mech', 'college_name': 'ABC', 'reg_no': 220004006, 'Mark_Obtained': 165, 'maths': 67, 'science': 2, 'english': 45, 'social': 51}, {'id': 2, 'name': 'Kumar', 'Branch': 'ECE', 'college_name': 'Sastra', 'reg_no': 220004002, 'Mark_Obtained': 371, 'maths': 81, 'science': 96, 'english': 100, 'social': 94}, {'id': 10, 'name': 'Varadhan', 'Branch': 'Aero-Space', 'college_name': 'Sastra', 'reg_no': 220004008, 'Mark_Obtained': 234, 'maths': 33, 'science': 70, 'english': 100, 'social': 31}, {'id': 4, 'name': 'Venky', 'Branch': 'ECE', 'college_name': 'Ktc', 'reg_no': 220004001, 'Mark_Obtained': 302, 'maths': 63, 'science': 84, 'english': 80, 'social': 75}, {'id': 9, 'name': 'Vishnu', 'Branch': 'Aero-Space', 'college_name': 'Karunya', 'reg_no': 220004007, 'Mark_Obtained': 265, 'maths': 63, 'science': 50, 'english': 100, 'social': 52}, {'id': 3, 'name': 'abi', 'Branch': 'CSE', 'college_name': 'Ktc', 'reg_no': 220004012, 'Mark_Obtained': 197, 'maths': 89, 'science': 0, 'english': 75, 'social': 33}]>
+>>> Student.objects.reverse()[0:5]
+<QuerySet [<Student: Ganesh>, <Student: Kumar>, <Student: abi>, <Student: Venky>, <Student: Hasan>]>
+>>> Student.objects.order_by('name').values(hello='name')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 809, in values
+    clone = self._values(*fields, **expressions)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 802, in _values
+    clone = clone.annotate(**expressions)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1042, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): name.
+>>> Student.objects.order_by('name').values('name')
+<QuerySet [{'name': 'Askar'}, {'name': 'Dasta'}, {'name': 'Ganesh'}, {'name': 'Ganesh'}, {'name': 'Hasan'}, {'name': 'Jeff'}, {'name': 'Jone'}, {'name': 'Kumar'}, {'name': 'Varadhan'}, {'name': 'Venky'}, {'name': 'Vishnu'}, {'name': 'abi'}]>
+>>> Student.objects.order_by('name').values('name','id')
+<QuerySet [{'name': 'Askar', 'id': 6}, {'name': 'Dasta', 'id': 11}, {'name': 'Ganesh', 'id': 1}, {'name': 'Ganesh', 'id': 12}, {'name': 'Hasan', 'id': 5}, {'name': 'Jeff', 'id': 7}, {'name': 'Jone', 'id': 8}, {'name': 'Kumar', 'id': 2}, {'name': 'Varadhan', 'id': 10}, {'name': 'Venky', 'id': 4}, {'name': 'Vishnu', 'id': 9}, {'name': 'abi', 'id': 3}]>
+>>> Student.objects.filter(name='Ganesh').values()
+<QuerySet [{'id': 1, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004022, 'Mark_Obtained': 281, 'maths': 93, 'science': 64, 'english': 100, 'social': 24}, {'id': 12, 'name': 'Ganesh', 'Branch': 'CSE', 'college_name': 'Sastra', 'reg_no': 220004033, 'Mark_Obtained': 243, 'maths': 55, 'science': 56, 'english': 100, 'social': 32}]>
+>>> from django.db.models.functions import Lower,Coalesce
+>>> Student.objects.filter(Coalesce('name').desc())
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/functions/comparison.py", line 49, in __init__
+    raise ValueError('Coalesce must take at least two expressions')
+ValueError: Coalesce must take at least two expressions
+>>> Student.objects.filter(Coalesce('name','id').desc())
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1381, in _add_q
+    check_filterable=check_filterable,
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1247, in build_filter
+    arg, value = filter_expr
+TypeError: 'OrderBy' object is not iterable
+>>> Student.objects.order_by(Coalesce('name', 'id').desc())
+<QuerySet [<Student: abi>, <Student: Vishnu>, <Student: Venky>, <Student: Varadhan>, <Student: Kumar>, <Student: Jone>, <Student: Jeff>, <Student: Hasan>, <Student: Ganesh>, <Student: Ganesh>, <Student: Dasta>, <Student: Askar>]>
+>>> a=Student.objects.all()[0]
+>>> b=Student.objects.all()[1]
+>>> a.union(b)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'union'
+>>> a=Student.objects.values_list('name')
+>>> a
+<QuerySet [('Ganesh',), ('Kumar',), ('abi',), ('Venky',), ('Hasan',), ('Askar',), ('Jeff',), ('Jone',), ('Vishnu',), ('Varadhan',), ('Dasta',), ('Ganesh',)]>
+>>> a=Student.objects.values_list('Branch')b
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 64, in runsource
+    code = self.compile(source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 168, in __call__
+    return _maybe_compile(self.compiler, source, filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 99, in _maybe_compile
+    raise err1
+  File "/usr/lib/python3.6/codeop.py", line 87, in _maybe_compile
+    code1 = compiler(source + "\n", filename, symbol)
+  File "/usr/lib/python3.6/codeop.py", line 133, in __call__
+    codeob = compile(source, filename, symbol, self.flags, 1)
+  File "<console>", line 1
+    a=Student.objects.values_list('Branch')b
+                                           ^
+SyntaxError: invalid syntax
+>>> b=Student.objects.values_list('Branch')
+>>> a.union(b)
+<QuerySet [('Aero-Space',), ('Askar',), ('CSE',), ('Civil',), ('Dasta',), ('E&I',), ('ECE',), ('EEE',), ('Ganesh',), ('Hasan',), ('Jeff',), ('Jone',), ('Kumar',), ('Mech',), ('Varadhan',), ('Venky',), ('Vishnu',), ('abi',)]>
+>>> c=a.union(b)
+>>> c.count()
+18
+>>> c
+<QuerySet [('Aero-Space',), ('Askar',), ('CSE',), ('Civil',), ('Dasta',), ('E&I',), ('ECE',), ('EEE',), ('Ganesh',), ('Hasan',), ('Jeff',), ('Jone',), ('Kumar',), ('Mech',), ('Varadhan',), ('Venky',), ('Vishnu',), ('abi',)]>
+>>> a.count()
+12
+>>> b.count()
+12
+>>> c=a.intersection(b)
+>>> c
+<QuerySet []>
+>>> c=a.difference(b)
+>>> c
+<QuerySet [('Askar',), ('Dasta',), ('Ganesh',), ('Hasan',), ('Jeff',), ('Jone',), ('Kumar',), ('Varadhan',), ('Venky',), ('Vishnu',), ('abi',)]>
+>>> c.Count()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Count'
+>>> Count(c)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Count' is not defined
+>>> c.count()
+11
+>>> from blog.models import Student
+>>> a=Student.objects.all()[0]
+>>> a.Mark_Obtained
+281
+>>> a.Mark_Obtained=100
+>>> a.save()
+>>> a.Mark_Obtained
+100
+>>> from blog.models import Employee
+>>> Employee.objects.filter(Emp_salary__gt=1000)
+<QuerySet [<Employee: ABC>, <Employee: XYZ>, <Employee: Jai>]>
+>>> Employee.objects.filter(Emp_salary__gt=1000).values('Emp_salary')
+<QuerySet [{'Emp_salary': 10000}, {'Emp_salary': 100000}, {'Emp_salary': 10300}]>
+>>> Employee.objects.filter(Emp_salary).order_by('Emp_salary').values()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+NameError: name 'Emp_salary' is not defined
+>>> Employee.objects.order_by('Emp_salary')[0]
+<Employee: ABC>
+>>> Employee.objects.order_by('Emp_salary')[0].values()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Employee' object has no attribute 'values'
+>>> Employee.objects.order_by('Emp_salary')[0]
+<Employee: ABC>
+>>> Employee.objects.order_by('Emp_salary')[0].values('Emp_salary')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'Employee' object has no attribute 'values'
+>>> Employee.objects.order_by('Emp_salary').values('Emp_salary')
+<QuerySet [{'Emp_salary': 10000}, {'Emp_salary': 10300}, {'Emp_salary': 100000}]>
+>>> Employee.objects.order_by('-Emp_salary').values('Emp_salary')
+<QuerySet [{'Emp_salary': 100000}, {'Emp_salary': 10300}, {'Emp_salary': 10000}]>
+>>> Employee.objects.order_by('-Emp_salary').values('Emp_salary')[0]
+{'Emp_salary': 100000}
+>>> dir()
+['Book', 'Car', 'Coalesce', 'Employee', 'Lower', 'Post', 'Product', 'Student', '__builtins__', 'a', 'b', 'c', 'i', 'pickle']
+>>> from django.db.models.functions import Max,Min,Count
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+ImportError: cannot import name 'Max'
+>>> from django.db.models import Max,Min,Count
+>>> Employee.objects.all().Max('Emp_salary')
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Max'
+>>> Employee.objects.all().aggregat(Max('Emp_salary'))
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'aggregat'
+>>> Employee.objects.all().aggregate(Max('Emp_salary'))
+{'Emp_salary__max': 100000}
+>>> 
+KeyboardInterrupt
+>>> 
+now exiting InteractiveConsole...
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 377, in execute
+    django.setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 196, in <module>
+    class StudentDetails(models.Model):
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 197, in StudentDetails
+    name=models.Charfield(max_length=100)
+AttributeError: module 'django.db.models' has no attribute 'Charfield'
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 377, in execute
+    django.setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 196, in <module>
+    class StudentDetails(models.Model):
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 199, in StudentDetails
+    school=models.ForeignKey(School,on_delete=models.CASCADE)
+NameError: name 'School' is not defined
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 377, in execute
+    django.setup()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/aspire1326/.local/lib/python3.6/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 196, in <module>
+    class StudentDetails(models.Model):
+  File "/home/aspire1326/Django/test_project/blog/models.py", line 199, in StudentDetails
+    school=models.ForeignKey(School,on_delete=models.CASCADE)
+NameError: name 'School' is not defined
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Migrations for 'blog':
+  blog/migrations/0020_auto_20200313_1209.py
+    - Create model School
+    - Create model Subjects
+    - Create model StudentDetails
+    - Add field Sub_mark to school
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^blog/$' uses include with a route ending with a '$'. Remove the dollar from the route to avoid problems including URLs.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0020_auto_20200313_1209... OK
+aspire1326@aspire1326-thinkcenter-m71e:~/Django/test_project$ python manage.py shell
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import StudentDetails,School,Subjects
+>>> Subjects.objects.all()
+<QuerySet []>
+>>> a=Subjects(maths=40,social=50,english=90,science=70)
+>>> a.save()
+>>> a
+<Subjects: Subjects object (1)>
+>>> b=School(school_name='ABC',Sub_mark=a)
+>>> b.save()
+>>> b.Sub_mark
+<Subjects: Subjects object (1)>
+>>> b.Sub_mark.maths
+40
+>>> a=StudentDetails(name='Abi',reg_no=220004001,school=b,phone_no=9080303328)
+>>> a.save()
+>>> a
+<StudentDetails: Abi>
+>>> StudentDetails.objects.all()
+<QuerySet [<StudentDetails: Abi>]>
+>>> a.b
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'StudentDetails' object has no attribute 'b'
+>>> a.school
+<School: School object (1)>
+>>> a.Sub_mark.maths
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/code.py", line 91, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+AttributeError: 'StudentDetails' object has no attribute 'Sub_mark'
+>>> a.school.Sub_mark.maths
+40
+>>> 
+

@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+    <form action="" method="POST">
+        <h2>Student Name:<input type="text" > <button type="submit">Click Here</button></h2>        
+    </form> 
+
+
+
+<form method="GET">
+<table>
+  <tr>
+    <th>Students Details</th>
+    <th>School Details</th>
+    <th>Mark Obtained</th>
+  </tr>
+  <tr>
+    <td>{{Student.name}}</td>
+    <td>{{Student.school.school_name}}</td>
+    <td>maths={{Student.school.Sub_mark.maths}}</td>
+  </tr>
+  <tr>
+    <td>{{Student.reg_no}}</td>
+    <td></td>
+    <td>science={{Student.school.Sub_mark.science}}</td>
+  </tr>
+  <tr>
+    <td>{{Student.phone_no}}</td>
+    <td></td>
+    <td>english={{Student.school.Sub_mark.english}}</td>
+  </tr>
+  
+    <td></td>
+    <td></td>
+    <td>social={{Student.school.Sub_mark.social}}</td>
+  </tr>
+  
+</table>
+</form>
+</body>
+</html>

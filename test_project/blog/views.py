@@ -21,7 +21,7 @@ def display(request):
 
 def Print(request):
     val=int(request.GET['Value'])
-    print(val)
+   
     a=StudentDetails.objects.all()
     context={
         'Student':StudentDetails.objects.all()[int(val)]

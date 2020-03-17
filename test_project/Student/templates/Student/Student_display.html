@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+   
+   
+    <table>
+  <tr>
+    <th>Students Details</th>
+    
+  </tr>
+  <tr>
+    <td>NAME</td>
+    <td>{{Student.name}}</td>
+  </tr>
+  <tr>
+    <td>Register Number</td>
+    <td>{{Student.reg_no}}</td>
+    </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td>{{Student.reg_no}}</td>
+    
+  </tr>
+  <tr>
+    <td>School Name</td>
+    <td>{{Student.school.school_name}}</td>
+   
+  </tr>
+    
+    <td>Mark in Maths</td>
+    <td>{{Student.school.Sub_mark.maths}}</td>
+   
+  </tr>
+  </tr>
+     <td>Mark in English</td>
+     <td>{{Student.school.Sub_mark.english}}</td>
+  </tr>
+  </tr>
+    <td>Mark in Social</td>
+     <td>{{Student.school.Sub_mark.social}}</td>
+  </tr>
+</tr>
+<td>Mark in Science</td>
+<td>{{Student.school.Sub_mark.science}}</td>
+</tr>
+</table>
+
+</body>
+</html>

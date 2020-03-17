@@ -17,8 +17,14 @@ def about(request):
     return render(request,'blog/about.html',context)
 
 def display(request):
+    return render(request,'blog/Validation.html')
+
+def Print(request):
+    val=int(request.GET['Value'])
+    print(val)
+    a=StudentDetails.objects.all()
     context={
-        'Student':StudentDetails.objects.all()[0]
+        'Student':StudentDetails.objects.all()[int(val)]
     }
     return render(request,'blog/Students.html',context)
 

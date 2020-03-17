@@ -19,41 +19,49 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-    <form action="" method="POST">
-        <h2>Student Name:<input type="text" > <button type="submit">Click Here</button></h2>        
-    </form> 
-
-
-
-<form method="GET">
-<table>
+   
+   
+    <table>
   <tr>
     <th>Students Details</th>
-    <th>School Details</th>
-    <th>Mark Obtained</th>
+    
   </tr>
   <tr>
+    <td>NAME</td>
     <td>{{Student.name}}</td>
-    <td>{{Student.school.school_name}}</td>
-    <td>maths={{Student.school.Sub_mark.maths}}</td>
   </tr>
   <tr>
+    <td>Register Number</td>
     <td>{{Student.reg_no}}</td>
-    <td></td>
-    <td>science={{Student.school.Sub_mark.science}}</td>
+    </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td>{{Student.reg_no}}</td>
+    
   </tr>
   <tr>
-    <td>{{Student.phone_no}}</td>
-    <td></td>
-    <td>english={{Student.school.Sub_mark.english}}</td>
+    <td>School Name</td>
+    <td>{{Student.school.school_name}}</td>
+   
   </tr>
-  
-    <td></td>
-    <td></td>
-    <td>social={{Student.school.Sub_mark.social}}</td>
+    
+    <td>Mark in Maths</td>
+    <td>{{Student.school.Sub_mark.maths}}</td>
+   
   </tr>
-  
+  </tr>
+     <td>Mark in English</td>
+     <td>{{Student.school.Sub_mark.english}}</td>
+  </tr>
+  </tr>
+    <td>Mark in Social</td>
+     <td>{{Student.school.Sub_mark.social}}</td>
+  </tr>
+</tr>
+<td>Mark in Science</td>
+<td>{{Student.school.Sub_mark.science}}</td>
+</tr>
 </table>
-</form>
+
 </body>
 </html>

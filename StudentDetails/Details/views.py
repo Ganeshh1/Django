@@ -52,3 +52,9 @@ def Create_New_school(request):
     z=School(school_name=school_name,school_no=school_number,school_location=school_location)
     z.save()
     return render(request,'StudentDetails/Student_details.html',{'Students':StudentDetails.objects.all()})
+def Create_New_subject(request):
+    sub_name=request.GET['sub_name']
+    sub_mark=request.GET['sub_mark']
+    z=Sub_name(name=sub_name,mark=sub_mark)
+    z.save()
+    return render(request,'StudentDetails/Student_details.html',{'Students':StudentDetails.objects.all()})

@@ -25,7 +25,8 @@ urlpatterns = [
     path('Create/Create_student/',views.Create_student,name='New_Student_entry'),
     path('Create/Create_school/',views.Create_school,name='New_School_entry'), 
     path('Create/Create_school/Create_New_school/',views.Create_New_school,name='Create_New_school'),
-    path('Create/Create_student/Create_New_student/',views.Create_New_student,name='Create_New_student'), 
+    path('Create/Create_student/Create_New_student/',views.Create_New_student,name='Create_New_student'),
+    path('Create/Create_student/Create_New_school/',views.Create_New_school,name='Create_New_school'),	    
     
 ] 
 urlpatterns+=staticfiles_urlpatterns()

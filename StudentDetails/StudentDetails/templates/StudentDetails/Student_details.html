@@ -1,0 +1,27 @@
+<html>
+    <head>
+    <title>Validation</title>
+</head>
+<body>
+    <form action="Print/" method="GET">
+        <h1>Student Name:</h1>
+        
+        
+        <select name='Value'>
+            {% for Student in Students %}
+              <option value='{{Student.id}}'>{{Student.name}}</option>
+            {% endfor %}
+            <input type="submit" >  
+        </select>
+    </form> 
+        <form action="Create/" method="GET">
+
+            <h2>Create</h2>
+            <input type="submit" >
+
+        </form>
+
+             
+    
+</body>
+</html>

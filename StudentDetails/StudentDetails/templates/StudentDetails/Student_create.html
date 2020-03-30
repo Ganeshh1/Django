@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>School Details</title>
+        <link rel="stylesheet" text='css/text' href="{% static 'static/style.css' %} " />
+
+    </head>
+    
+    <body>
+        <div id="border">
+           <h4>
+                You can Create here...
+            </h4>
+            <div id="student">
+                <header class="main-header">Student Details</header>
+           
+               {% for Student in Students%}
+               <p>{{Student.name}}</p>
+               {%endfor%}
+            </div>
+            <div id="img1">
+                <a href="Create_student"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+           </div>
+            <div id="img2">
+                <a href="Create_school"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+           </div>
+            <div id="school">
+                <header class="main-header">School Details</header>
+                {% for Student in School%}
+               <p>{{Student.school_name}}</p>
+               {%endfor%}
+            </div>
+            <div id="subject">
+                <header class="main-header">Subject Details</header>
+                {% for Sub in Sub_name%}
+               <p>{{Sub}}</p>
+               {%endfor%} 
+            </div>
+            <div id="img3">
+                <a href="/create_subject.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+             </div>
+       </div>
+    </body>
+</html>

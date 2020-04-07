@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+   
+   
+    <table>
+  <tr>
+    <th>Students Details</th>
+    
+  </tr>
+  <tr>
+    <td>NAME</td>
+    <td>{{Student.name}}</td>
+  </tr>
+  <tr>
+    <td>Register Number</td>
+    <td>{{Student.reg_no}}</td>
+    </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td>{{Student.phone_no}}</td>
+    
+  </tr>
+  <tr>
+    <td>School Name</td>
+    <td>{{Student.school.school_name}}</td>
+   
+  </tr>
+  <tr>
+    <td>School Phone-no</td>
+    <td>{{Student.school.school_no}}</td>
+   
+  </tr>
+  <tr>
+    <td>School Loaction</td>
+    <td>{{Student.school.school_location}}</td>
+   
+  </tr>
+  {% for Subject in Subjects%}
+  <tr>
+    
+    <td>Mark in {{Subject.sub_name}}</td>
+    <td>{{Subject.mark}}</td>
+   
+  </tr>
+  {%endfor%}
+ 
+</tr>
+</table>
+
+</body>
+</html>
+

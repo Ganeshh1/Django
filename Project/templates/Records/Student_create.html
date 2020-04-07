@@ -1,0 +1,134 @@
+{% load static %}
+<html>
+    <head>
+        <title>School Details</title>
+        
+
+    </head>
+ <style>
+     body{
+    background-color: wheat;
+}
+h4
+{
+    text-align: center;
+    color : brown;
+    font-family: Lucida Sans;
+    font-style: italic;
+    font-size: x-large;
+   
+    
+}
+
+#border
+{
+    border-style: ridge;
+    border-radius: 50px;
+    margin: 30px 30px;
+    padding-bottom: 40px;
+    padding-top:10px;
+    background-color: snow;
+}
+#student
+{
+    border-style: inset;
+    margin-left : 40px; 
+    margin-top : 10px;
+}
+
+#school
+{
+    border-style: inset;
+    margin-top : -200px;
+    margin-left: 700px; 
+}
+#subject
+{
+    border-style: inset;
+    margin-top : 50px;
+    margin-left : 410px; 
+
+}
+#subject,#school,#student
+{
+    color:brown;
+    height : 200px;
+    width: 500px;
+    overflow: scroll;
+}
+#image
+{
+    height:30px;
+    width:30px;
+    border-radius: 5px;
+}
+#img1
+{
+    margin-left: 550px;
+    margin-top: -25px;
+   
+}
+#img2
+{
+    margin-top: -30px;
+    margin-left: 1205px;
+}
+#img3
+{
+    margin-left : 917px;
+    margin-top: -30px;
+}
+p:nth-child(odd) {
+    background: whitesmoke;
+  }
+  
+  p:nth-child(even) {
+    background: white;
+  }
+  
+.main-header
+{
+    position:-webkit-sticky; 
+    position:sticky; 
+    top:0; 
+    font-style: italic;
+    float : right;
+}
+
+ </style>   
+    <body>
+        <div id="border">
+           <h4>
+                You can Create here...
+            </h4>
+            <div id="student">
+                <header class="main-header">Student Details</header>
+           
+               {% for Student in Students%}
+               <p>{{Student.name}}</p>
+               {%endfor%}
+            </div>
+            <div id="img1">
+                <a href="Create_student"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+           </div>
+            <div id="img2">
+                <a href="Create_school"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+           </div>
+            <div id="school">
+                <header class="main-header">School Details</header>
+                {% for Student in School%}
+               <p>{{Student.school_name}}</p>
+               {%endfor%}
+            </div>
+            <div id="subject">
+                <header class="main-header">Subject Details</header>
+                {% for Sub in Sub_name%}
+               <p>{{Sub}}</p>
+               {%endfor%} 
+            </div>
+            <div id="img3">
+                <a href="Create_subject"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ2orJlqsSAvEnMpn34UPWkWnAGj30n3h7qVtWMPRDcxca8nlfD" id="image"></a>
+             </div>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'profile' %}">View</a></li>
+  
+  
+  {% if user.is_authenticated %}
+  <li><a href="{% url 'Student-create' %}">Create</a></li>
+  <li style="float:right"><a href="{% url 'logout' %}">Logout</a></li>
+  {% else %}
+  <li style="float:right"><a href="{% url 'login' %}">Login</a></li>
+  <li style="float:right"><a href="{% url 'register' %}">Register</a></li>
+  {% endif %}  
+</ul>
+{% if user.is_authenticated %}
+<h1 style="justify-content:center;color:black;">Hello {{user}}</h1>
+<form action="Print/" method="GET">
+        
+    <h1>Student Name:</h1>
+    
+    
+    <select name='Value'>
+        {% for Student in Students %}
+          <option value='{{Student.reg_no}}'>{{Student.name}}</option>
+        {% endfor %}
+        <input type="submit" >  
+    </select>
+</form> 
+    <form action="Create/" method="GET">
+
+        <h2>Create</h2>
+        <input type="submit" >
+
+    </form>
+    {% else %}
+    <h1>Login In Required</h1>
+    <a href="{% url 'login' %}">Click Here </a>
+    {% endif %}
+</body>
+</html>
+
+    
+             
+    

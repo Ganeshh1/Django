@@ -1,0 +1,20 @@
+<html>
+    <head>
+    <title>Creating Subject Details</title>
+</head>
+<body>
+    <h1>Enter the details for the Subject</h1>
+    <form action="Create_New_subject/" method="GET">
+        <p>subject Name    :   <input name="sub_name" type="text"></p>
+        <p>subject mark       :   <input name="sub_mark" type="number"></p>
+        <select name='Value'>
+            {% for Student in Students %}
+              <option value='{{Student}}'>{{Student.name}}</option>
+            {% endfor %}
+              
+        </select>
+        <input type="submit" >
+    </form>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ def home(request):
     context={'Students':Student.objects.all()}
     return render(request,'Records/home.html',{'Students':Student.objects.all()})
 
-def Print(request):
+def display(request):
     reg_no=int(request.GET['Value'])
    
     student=Student.objects.get(reg_no=reg_no)
@@ -28,9 +28,9 @@ def Create_New_student(request):
     phone_number=int(request.GET['phone_no'])
     reg_no=request.GET['reg_no']
     school_name=request.GET['school_name']
-    school_no=request.GET['school_no']
+    phone_no=request.GET['school_no']
     school_location=request.GET['school_location']
-    school=School(school_name=school_name,school_no=school_no,school_location=school_location)
+    school=School(school_name=school_name,phone_no=phone_no,school_location=school_location)
     school.save()
     student=Student(name=name,reg_no=reg_no,phone_no=phone_number)
     student.save()
@@ -47,7 +47,7 @@ def Create_New_school(request):
     school_name=request.GET['school_name']
     school_number=int(request.GET['school_no'])
     school_location=request.GET['school_location']
-    school=School(school_name=school_name,school_no=school_number,school_location=school_location)
+    school=School(school_name=school_name,phone_no=school_number,school_location=school_location)
     school.save()
     return render(request,'Records/Student_details.html',{'Students':Student.objects.all()})
 

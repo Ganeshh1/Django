@@ -21,8 +21,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('Print/',views.Print,name='Student-print'),
-	path('Create/',views.Create,name='Student-create'),
+    path('display/',views.display,name='Student-print'),
+    path('Create/',views.Create,name='Student-create'),
     path('Create/Create_student/',views.Create_student,name='New_Student_entry'),
     path('Create/Create_school/',views.Create_school,name='New_School_entry'), 
     path('Create/Create_subject/',views.Create_subject,name='New_Subject_entry'), 
